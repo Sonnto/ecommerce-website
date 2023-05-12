@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import ProductFeed from "../components/ProductFeed";
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div className="bg-gray-100">
       <Head>
@@ -14,10 +14,25 @@ export default function Home() {
       <main className="max-w-screen-2xl mx-auto">
         {/* BANNER */}
         <Banner />
-
         {/* PRODUCT FEED */}
-        <ProductFeed />
+        <ProductFeed products={products} />
+        {/* pass through products json for destructuring */}
       </main>
     </div>
   );
+}
+
+// FAKE STORE API to populate items being sold, using Next.js
+//GET request to https://fakestoreapi.com/products
+console.log("Is it reaching before the async function?");
+export async function getServerSideProps(context) {
+  console.log("Is it reaching here?");
+  const products = await fetch("https://fakestoreapi.com/products").then(
+    (res) => res.json()
+  );
+  return {
+    props: {
+      products,
+    },
+  };
 }
