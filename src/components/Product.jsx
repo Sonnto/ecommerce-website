@@ -56,7 +56,7 @@ function Product({
         <div className="flex items-center space-x-2 -mt-5">
           <img
             className="h-6"
-            src="/images/prime_check.png"
+            src="/images/prime_checkmark.png"
             alt="Amazon Prime Available for item"
           />
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
