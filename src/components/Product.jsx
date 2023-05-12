@@ -16,7 +16,7 @@ function Product({
   rate,
   count,
 }) {
-  const [myStars] = useState(
+  const [randomRating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) +
       MIN_RATING /* ensure min value of range starts at min rating value */
   ); /*Generates number of max range and min range of 5 & 1;*/
@@ -39,7 +39,7 @@ function Product({
       <div className="flex">
         {/* Array of [rating], filled with empty values, and map through those values; gives 2 values, second is index; amount of stars is decided by rating variable that is randomized*/}
         {/*  */}
-        {Array(myStars)
+        {Array(randomRating)
           .fill()
           .map((_, i) => (
             <StarIcon className="text-yellow-500 h-5" />
