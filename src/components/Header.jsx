@@ -12,7 +12,7 @@ function Header() {
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
-            src="https://links.papareact.com/f90"
+            src="/images/amazon_logo.png"
             width={150}
             height={40}
             objectFit="contain" //keeps aspect ratio
@@ -46,7 +46,7 @@ function Header() {
 
             <ShoppingCartIcon className="h-10" />
             <p className="hidden md:inline font-extrabold md:text-sm mt-2">
-              Basket
+              Cart
             </p>
           </div>
         </div>
@@ -54,21 +54,23 @@ function Header() {
 
       {/* BOTTOM NAV */}
       <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
-        <p className="link flex items-center">
+        <p className="link flex items-center font-extrabold md:text-sm">
           <Bars3Icon className="h-6 mr-1" />
           All
         </p>
-        <p className="link">Prime Video</p>
-        <p className="link">Amazon Business</p>
-        <p className="link">Today's Deals</p>
-        <p className="link hidden lg:inline-flex">Automotive</p>
+        <p className="link">Best Sellers</p>
+        <p className="link">Deals Store</p>
+        <p className="link">New Releases</p>
+        <p className="link">Customer Service</p>
+        <p className="link">Prime</p>
+        <p className="link hidden lg:inline-flex">Sell</p>
+        <p className="link hidden lg:inline-flex">Home</p>
         <p className="link hidden lg:inline-flex">Electronics</p>
-        <p className="link hidden lg:inline-flex">Fashion & Clothing</p>
-        <p className="link hidden lg:inline-flex">Food & Grocery</p>
-        <p className="link hidden lg:inline-flex">Prime</p>
-        <p className="link hidden lg:inline-flex">Buy Again</p>
-        <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
-        <p className="link hidden lg:inline-flex">Health & Supplements</p>
+        <p className="link hidden lg:inline-flex">Books</p>
+        <p className="link hidden lg:inline-flex">Kindle Books</p>
+        <p className="link hidden lg:inline-flex">Fashion</p>
+        <p className="link hidden lg:inline-flex">Health</p>
+        <p className="link hidden lg:inline-flex">Automotive</p>
       </div>
     </header>
   );

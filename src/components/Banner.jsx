@@ -14,16 +14,26 @@ function Banner() {
         interval={5000}
       >
         <div>
-          {/*FIRST SLIDE IN CAROUSEL BANNER AUTO-INFINITE LOOP*/}
-          <img loading="lazy" src="https://links.papareact.com/6ff" alt="" />
+          {/* CAROUSEL BANNER AUTO-INFINITE LOOP */}
+          <img
+            loading="lazy"
+            src="/images/banner1.jpg"
+            alt="Amazon Prime Video hero image"
+          />
         </div>
         <div>
-          {/*SECOND SLIDE IN CAROUSEL BANNER AUTO-INFINITE LOOP*/}
-          <img loading="lazy" src="https://links.papareact.com/gi1" alt="" />
+          <img
+            loading="lazy"
+            src="/images/banner2.jpg"
+            alt="Audible Original hero image"
+          />
         </div>
         <div>
-          {/*THIRD SLIDE IN CAROUSEL BANNER AUTO-INFINITE LOOP*/}
-          <img loading="lazy" src="https://links.papareact.com/7ma" alt="" />
+          <img
+            loading="lazy"
+            src="/images/banner3.jpg"
+            alt="Amazon Music hero image"
+          />
         </div>
       </Carousel>
     </div>
