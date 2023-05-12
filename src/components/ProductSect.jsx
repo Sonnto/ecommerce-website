@@ -1,9 +1,8 @@
 import Product from "./Product";
 
-function ProductFeed({ products }) {
+function ProductSect({ products }) {
   return (
     <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-52 mx-auto">
-      {console.log(`Checking if products be working: ${products}`)}
       {products
         .slice(0, 4)
         .map(({ id, title, price, description, category, image, rating }) => (
@@ -22,7 +21,7 @@ function ProductFeed({ products }) {
 
       <img
         className="md:col-span-full"
-        src="/images/advert1.jpg"
+        src="/images/banner_advert copy.jpg"
         alt="Banner advertisement"
       />
 
@@ -63,4 +62,4 @@ function ProductFeed({ products }) {
   );
 }
 
-export default ProductFeed;
+export default ProductSect;
