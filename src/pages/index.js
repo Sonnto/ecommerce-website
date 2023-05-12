@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
-import ProductFeed from "../components/ProductFeed";
+import ProductSect from "../components/ProductSect";
 
 export default function Home({ products }) {
   return (
@@ -14,8 +14,8 @@ export default function Home({ products }) {
       <main className="max-w-screen-2xl mx-auto">
         {/* BANNER */}
         <Banner />
-        {/* PRODUCT FEED */}
-        <ProductFeed products={products} />
+        {/* PRODUCT SECTION */}
+        <ProductSect products={products} />
         {/* pass through products json for destructuring */}
       </main>
     </div>
