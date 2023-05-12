@@ -15,6 +15,7 @@ export default function Home() {
         <Banner />
 
         {/* PRODUCT FEED */}
+        <ProductFeed />
       </main>
     </div>
   );
