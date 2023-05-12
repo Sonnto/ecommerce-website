@@ -15,25 +15,19 @@ function Banner() {
       >
         <div>
           {/* CAROUSEL BANNER AUTO-INFINITE LOOP */}
-          <img
-            loading="lazy"
-            src="/images/banner1.jpg"
-            alt="Amazon Prime Video hero image"
-          />
+          <img loading="lazy" src="/images/banner1.jpg" alt="Hero banner" />
         </div>
         <div>
-          <img
-            loading="lazy"
-            src="/images/banner2.jpg"
-            alt="Audible Original hero image"
-          />
+          <img loading="lazy" src="/images/banner2.jpg" alt="Hero banner" />
         </div>
         <div>
-          <img
-            loading="lazy"
-            src="/images/banner3.jpg"
-            alt="Amazon Music hero image"
-          />
+          <img loading="lazy" src="/images/banner3.jpg" alt="Hero banner" />
+        </div>
+        <div>
+          <img loading="lazy" src="/images/banner4.jpg" alt="Hero banner" />
+        </div>
+        <div>
+          <img loading="lazy" src="/images/banner5.jpg" alt="Hero banner" />
         </div>
       </Carousel>
     </div>
