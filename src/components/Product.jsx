@@ -44,6 +44,7 @@ function Product({
           .map((_, i) => (
             <StarIcon className="text-yellow-500 h-5" />
           ))}
+        <p className="ml-5 text-sm">{count} ratings</p>
       </div>
 
       <p className="text-xs mb-2 mt-2 line-clamp-2">{description}</p>
@@ -54,7 +55,7 @@ function Product({
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
           <img
-            className="h-5"
+            className="h-6"
             src="/images/prime_check.png"
             alt="Amazon Prime Available for item"
           />
