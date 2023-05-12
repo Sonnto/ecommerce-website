@@ -25,12 +25,14 @@ function Product({
   /* Randomizing whether item has prime; if the number between 0-1 is less than 0.5, it has prime*/
 
   return (
-    <div>
-      <p>{category}</p>
+    <div className="relative flex flex-col m-5 bg-white z-30 p-10">
+      <p className="absolute top-2 right-2 text-xs italic text-gray-400">
+        {category}
+      </p>
       {/* Next.js image tag */}
       <Image src={image} height={200} width={200} objectFit="contain" />
 
-      <h4>{title}</h4>
+      <h4 className="my-3">{title}</h4>
       {/* <p>
         {rate} {count}
       </p> */}
@@ -40,27 +42,27 @@ function Product({
         {Array(myStars)
           .fill()
           .map((_, i) => (
-            <StarIcon className="h-5" />
+            <StarIcon className="text-yellow-500 h-5" />
           ))}
       </div>
 
-      <p>{description}</p>
-      <div>
+      <p className="text-xs mb-2 mt-2 line-clamp-2">{description}</p>
+      <div className="mb-5">
         <ReactCurrencyFormatter quantity={price} currency="CAD" />
       </div>
 
       {hasPrime && (
-        <div>
+        <div className="flex items-center space-x-2 -mt-5">
           <img
-            className="h-10"
+            className="h-5"
             src="/images/prime_check.png"
             alt="Amazon Prime Available for item"
           />
-          <p>FREE Next-day Delivery</p>
+          <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>
       )}
 
-      <button>Add to Cart</button>
+      <button className="mt-auto button">Add to Cart</button>
     </div>
   );
 }
