@@ -10,13 +10,13 @@ function Header() {
     <header>
       {/* TOP NAV */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-        <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+        <div className="mx-6 mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
             src="/images/amazon_logo.png"
             width={150}
             height={40}
-            objectFit="contain" //keeps aspect ratio
             className="cursor-pointer" //tailwind here
+            objectFit="contain" //keeps aspect ratio
           />
         </div>
 
