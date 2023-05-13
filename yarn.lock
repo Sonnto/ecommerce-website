@@ -1316,7 +1316,7 @@ firebase-admin@11.8.0:
     "@google-cloud/firestore" "^6.5.0"
     "@google-cloud/storage" "^6.9.5"
 
-firebase@9.22.0:
+firebase@^9.22.0:
   version "9.22.0"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-9.22.0.tgz#487d240b298af1433f15577d82b314c3ad5f0979"
   integrity sha512-Ay1u8IOfhPh58RFAHF7A9cKHACCgV6uI2bhkzKdkjnV0n2AAxn4tDtdXvJ3BEbfhF4WWBC2dFcEXH8cd14ptaw==
