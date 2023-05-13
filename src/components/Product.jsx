@@ -36,7 +36,7 @@ function Product({
         {category}
       </p>
       {/* Next.js image tag */}
-      <Image src={image} height={200} width={200} style="contain" />
+      <Image src={image} height={200} width={200} objectFit="contain" />
 
       <h4 className="my-3">{title}</h4>
 
