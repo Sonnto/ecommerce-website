@@ -24,7 +24,7 @@ function Checkout() {
             <h1 className="text-3xl border-b pb-4">
               {items.length === 0
                 ? "Your Shopping Cart is Empty"
-                : "Shopping Cart"}
+                : "Your Shopping Cart"}
             </h1>
 
             {items.map((item, i) => (
@@ -34,7 +34,7 @@ function Checkout() {
                 id={item.id}
                 title={item.title}
                 price={item.price}
-                // rating={item.rating}
+                rating={item.rating}
                 description={item.description}
                 category={item.category}
                 image={item.image}
@@ -46,8 +46,8 @@ function Checkout() {
           </div>
         </div>
 
-        {/* CHECKOUT RIGHT SIDE */}
-        <div></div>
+        {/* CHECKOUT RIGHT SIDE, SUBTOTAL, TOTAL */}
+        <div>{items.length > 0}</div>
       </main>
     </div>
   );
