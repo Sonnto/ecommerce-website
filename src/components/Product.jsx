@@ -86,7 +86,7 @@ function Product({
         </div>
       )}
 
-      <button onClick={() => addItemToCart()} className="mt-auto button">
+      <button onClick={addItemToCart} className="mt-auto button">
         Add to Cart
       </button>
     </div>
