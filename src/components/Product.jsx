@@ -5,8 +5,8 @@ import ReactCurrencyFormatter from "react-currency-formatter";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../slices/cartSlice";
 
-const MAX_RATING = 5;
-const MIN_RATING = 1;
+// const MAX_RATING = 5;
+// const MIN_RATING = 1;
 
 function Product({
   id,
@@ -49,6 +49,7 @@ function Product({
       image,
       rate,
       count,
+      hasPrime,
     };
     // send product as action to Redux store (cartSlice)
     dispatch(addToCart(product));
@@ -79,7 +80,7 @@ function Product({
           <img
             className="h-6"
             src="/images/prime_checkmark.png"
-            alt="Amazon Prime Available for item"
+            alt="Amazon Prime Available logo for item"
           />
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>
