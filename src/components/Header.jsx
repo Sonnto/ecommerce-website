@@ -7,6 +7,9 @@ import {
 import { signIn, signOut, useSession } from "next-auth/react";
 
 function Header() {
+  const { data: session } = useSession() ?? {}; //Ensure no TypeError so if not falsy null/undefined, return truthy useSession() as session. Otherwise, return empty object; either way, will have data property to avoid Type Error.
+  console.log(session);
+
   return (
     <header>
       {/* TOP NAV */}
@@ -32,8 +35,13 @@ function Header() {
 
         {/* ACCOUNTS, SHOPPING CART*/}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div onClick={() => signIn()} className="cursor-pointer link">
-            <p>Hello, Sonnto!</p>
+          <div
+            onClick={!session ? () => signIn() : () => signOut()}
+            className="cursor-pointer link"
+          >
+            <p className="hover:underline">
+              {session ? `Hello, ${session.user.name}!` : `Sign in`}
+            </p>
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
           <div className="link">
