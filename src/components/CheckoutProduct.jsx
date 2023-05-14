@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/20/solid";
+import { useDispatch } from "react-redux";
 import ReactCurrencyFormatter from "react-currency-formatter";
+import { addToCart, removeFromCart } from "../slices/cartSlice";
 
 function CheckoutProduct({
   id,
@@ -15,6 +17,31 @@ function CheckoutProduct({
   count,
   hasPrime,
 }) {
+  const dispatch = useDispatch();
+  //Add items to cart
+  const addItemToCart = () => {
+    const product = {
+      id,
+      title,
+      price,
+      rating,
+      description,
+      category,
+      image,
+      rate,
+      count,
+      hasPrime,
+    };
+    //Push items to the Redux Store
+    dispatch(addToCart(product));
+  };
+  //Remove items from cart
+  const removeItemFromCart = () => {
+    //Remove item from Redux Store
+    console.log("removeItemFromCart triggered");
+    dispatch(removeFromCart({ id }));
+  };
+  //Rating
   rating = [];
   for (let i = 0; i < rate; i++) {
     rating.push(<StarIcon className="text-yellow-500 h-5 mt-1" key={i} />);
@@ -36,7 +63,7 @@ function CheckoutProduct({
           <div className="flex items-center space-x-2">
             <img
               loading="lazy"
-              className="w-12"
+              className="h-6"
               src="images/prime_checkmark.png"
               alt="Amazon Prime Available logo for item"
             />
@@ -45,6 +72,14 @@ function CheckoutProduct({
         )}
       </div>
       {/* RIGHT SINGLE COLUMN, BUTTONS */}
+      <div className="flex flex-col space-y-2 my-auto justify-self-end">
+        <button onClick={addItemToCart} className="button">
+          Add to Cart
+        </button>
+        <button onClick={removeItemFromCart} className="button">
+          Remove from Cart
+        </button>
+      </div>
     </div>
   );
 }
