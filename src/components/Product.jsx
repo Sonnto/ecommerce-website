@@ -1,5 +1,5 @@
+import { React, useState } from "react";
 import Image from "next/dist/client/image";
-import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import ReactCurrencyFormatter from "react-currency-formatter";
 import { useDispatch } from "react-redux";
