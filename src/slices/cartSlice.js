@@ -47,4 +47,10 @@ export const { addToCart, removeFromCart } = cartSlice.actions;
 // Selectors - This is how we pull information from the Global store slice
 export const selectItems = (state) => state.cart.items;
 
+//reduce ES6 function
+//Loops through all items; total should be added to
+//"Reducing through"-iterating/looping thru items in list, starting at price of $0.00. Every time, add price to total (starting at $0.00)
+export const selectTotal = (state) =>
+  state.cart.items.reduce((total, item) => total + item.price, 0);
+
 export default cartSlice.reducer;
