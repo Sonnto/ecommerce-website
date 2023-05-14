@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import {
   Bars3Icon,
@@ -5,12 +6,20 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
+//Route Pages
 import { useRouter } from "next/router";
+//Pulls shopping cart information from Global Store
+import { useSelector } from "react-redux";
+import { selectItems } from "../slices/cartSlice";
 
 function Header() {
+  //Ensures login or logged out session is everywhere
   const { data: session } = useSession() ?? {}; //Ensure no TypeError so if not falsy null/undefined, return truthy useSession() as session. Otherwise, return empty object; either way, will have data property to avoid Type Error.
   console.log(session);
+  //Routes pages
   const router = useRouter();
+  //Shopping Cart items
+  const items = useSelector(selectItems);
 
   return (
     <header>
@@ -56,7 +65,7 @@ function Header() {
             className="relative link flex items-center"
           >
             <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
-              8
+              {items.length}
             </span>
 
             <ShoppingCartIcon className="h-10" />
