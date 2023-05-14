@@ -28,7 +28,20 @@ function Checkout() {
             </h1>
 
             {items.map((item, i) => (
-              <CheckoutProduct />
+              //when mapping in React, include unique key (worst case use index)
+              <CheckoutProduct
+                key={i}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                // rating={item.rating}
+                description={item.description}
+                category={item.category}
+                image={item.image}
+                rate={item.rate}
+                count={item.count}
+                hasPrime={item.hasPrime}
+              />
             ))}
           </div>
         </div>
