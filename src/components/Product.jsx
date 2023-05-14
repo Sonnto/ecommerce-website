@@ -2,6 +2,8 @@ import Image from "next/dist/client/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import ReactCurrencyFormatter from "react-currency-formatter";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../slices/cartSlice";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -16,6 +18,10 @@ function Product({
   rate,
   count,
 }) {
+  // Throws actions in Redux
+  const dispatch = useDispatch();
+
+  /* Item Ratings */
   const rating = [];
 
   for (let i = 0; i < rate; i++) {
@@ -26,9 +32,27 @@ function Product({
   //     MIN_RATING /* ensure min value of range starts at min rating value */
   // ); /*Generates number of max range and min range of 5 & 1;*/
 
+  /* Item Prime Availability */
   const [hasPrime] = "Yes";
   // const [hasPrime] = useState(Math.random() < 0.5);
-  /* Randomizing whether item has prime; if the number between 0-1 is less than 0.5, it has prime*/
+  // Randomizing whether item has prime; if the number between 0-1 is less than 0.5, it has prime*/
+
+  /* Adds Item to Store */
+  const addItemToCart = () => {
+    // Product added to the shopping cart that carries with it the properites that details the product
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+      rate,
+      count,
+    };
+    // send product as action to Redux store (cartSlice)
+    dispatch(addToCart(product));
+  };
 
   return (
     <div className="relative flex flex-col m-8 bg-white z-30 p-10">
@@ -61,7 +85,9 @@ function Product({
         </div>
       )}
 
-      <button className="mt-auto button">Add to Cart</button>
+      <button onClick={() => addItemToCart()} className="mt-auto button">
+        Add to Cart
+      </button>
     </div>
   );
 }
