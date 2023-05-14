@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/20/solid";
-import { useDispatch } from "react-redux";
 import ReactCurrencyFormatter from "react-currency-formatter";
 import { addToCart, removeFromCart } from "../slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 function CheckoutProduct({
   id,
