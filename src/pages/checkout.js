@@ -4,13 +4,22 @@ import { useSelector } from "react-redux";
 import { selectItems, selectTotal } from "../slices/cartSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
 import ReactCurrencyFormatter from "react-currency-formatter";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
 function Checkout() {
   //Ensures login or logged out session is everywhere
   const { data: session } = useSession() ?? {}; //Ensure no TypeError so if not falsy null/undefined, return truthy useSession() as session. Otherwise, return empty object; either way, will have data property to avoid Type Error.
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
+
+  //Checkout via Stripe session
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+    //Create checkout Stripe session via calling backend
+  };
 
   return (
     <div className="bg-gray-100">
@@ -67,6 +76,8 @@ function Checkout() {
               </h2>
 
               <button
+                role="link"
+                onClick={createCheckoutSession}
                 disabled={!session}
                 className={`button mt-2 ${
                   !session &&
