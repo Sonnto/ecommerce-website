@@ -1,8 +1,21 @@
-# About
+# E-Commerce Website {Name TBD}
 
-E-commerce Amazon clone to sell items pulled from the Fake Store API; uses React.js, Next.js, Redux, Tailwind
+## Details
+An e-commerce website inspired by the designs of Amazon. You can sign in through Google (Apple, GitHub, and Facebook is displayed but coming soon) purchase items through the store, and pay for it via Stripe.
 
-# Installation Steps
+## Languages, Frameworks, Tools
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Redux
+- Next.js
+- Express.js
+- Tailwind CSS
+- NextAuth.js
+- 
+
+# Instructions
 
 ## Using npm
 
@@ -21,3 +34,11 @@ Run commands
 2. `yarn install`
 
 3. `yarn run dev`
+
+## What to do?
+
+Click the buttons to start the adventure
+
+# Future Developments
+- Add new sign-in options from Apple, GitHub, Facebook, etc.
+- 
