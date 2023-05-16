@@ -49,5 +49,5 @@ Click to navigate the website. Add, remove, purchase items.
 
 # Future Developments
 
-- Add new sign-in options from Apple, GitHub, Facebook, etc.
+- Add new functional sign-in options from Apple, GitHub, Facebook, etc.
 - Debug Firebase and Stripe connections; orders are not being added to Firebase database and Stripe webhook returning `[404] POST` for `charge.succeeded`, `checkout.session.completed`, `payment_intent.created`, and `payment_intent.succeeded`
