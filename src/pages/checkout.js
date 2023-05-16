@@ -27,7 +27,7 @@ function Checkout() {
     //Redirect customer/user to Stripe Checkout
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
-    }); //Stripe API will succeed or cancel (back to checkout page)
+    }); //Stripe API will succeed (success page) or cancel (back to checkout page)
 
     if (result.error) alert(result.error.message); //if error, show me why
   };
