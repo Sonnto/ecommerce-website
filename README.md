@@ -14,6 +14,7 @@ An e-commerce website inspired by the designs of Amazon. You can sign in through
 - Tailwind CSS
 - NextAuth.js
 - Firestore, Firebase
+- Vercel
 
 # Instructions
 
