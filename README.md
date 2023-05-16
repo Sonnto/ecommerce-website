@@ -17,8 +17,8 @@ An e-commerce website inspired by the designs of Amazon. You can sign in through
 - Vercel
 
 ## APIs
-- [Stripe](https://stripe.com/)
-- 
+- [Fake Store](https://fakestoreapi.com)
+- [Stripe](https://stripe.com)
 
 # Instructions
 
