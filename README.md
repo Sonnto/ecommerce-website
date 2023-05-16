@@ -37,7 +37,7 @@ Run commands
 
 ## What to do?
 
-Click the buttons to start the adventure
+Click to navigate the website. Add, remove, purchase items.
 
 # Future Developments
 - Add new sign-in options from Apple, GitHub, Facebook, etc.
