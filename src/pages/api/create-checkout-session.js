@@ -35,8 +35,7 @@ export default async (req, res) => {
       "shipping_rate"["shr_1N8DnGBgOzp49Zd0QNUP8GtK"],
       "shipping_rate"["shr_1N8DS0BgOzp49Zd0kzj6Qxyv"],
       "shipping_rate"["shr_1N8Dr8BgOzp49Zd0QFDfAkNG"],
-    ],
-    //from stripe's website dashboard for project ecommerce-website
+    ], //shipping_rate `id`s from stripe's website dashboard for project ecommerce-website
     shipping_address_collection: {
       allowed_countries: ["CA", "US", "GB", "HK"],
     },
