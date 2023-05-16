@@ -1,7 +1,9 @@
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import Header from "../components/Header";
+import { useRouter } from "next/router";
 
-function success() {
+function Success() {
+  const router = useRouter();
   return (
     <div className="bg-gray-100 h-screen">
       <Header />
@@ -19,10 +21,16 @@ function success() {
             If you would like to check the status of your order(s), please click
             the link below.
           </p>
+          <button
+            onClick={() => router.push("/orders")}
+            className="button mt-8"
+          >
+            Check out my Orders
+          </button>
         </div>
       </main>
     </div>
   );
 }
 
-export default success;
+export default Success;
