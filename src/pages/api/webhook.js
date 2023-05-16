@@ -2,13 +2,11 @@ import { buffer } from "micro";
 import * as admin from "firebase-admin";
 
 //Secures connection to Firebase from backend (api folder)
-
 const serviceAccount = require("../../../permissions.json");
 
-const app = !admin.apps.length //if there is no app initialize,
-  ? admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-    }) // initialize
+//Initialize app if there is not one already initialized; otherwise, use the app that already has been initialized
+const app = !admin.apps.length
+  ? admin.initializeApp({ credential: admin.credential.cert(serviceAccount) })
   : admin.app();
 
 //Establishes connection to Stripe
@@ -18,6 +16,7 @@ const endpointSecret = process.env.STRIPE_SIGNING_SECRET; // - may require updat
 
 const fulfilOrder = async (session) => {
   console.log("Fulfilling order...", session);
+  console.log("Yo-hello! Here I am!");
   return app
     .firestore()
     .collection("users")
@@ -43,19 +42,19 @@ export default async (req, res) => {
     const payload = requestBuffer.toString();
     const sig = req.headers["stripe-signature"];
 
-    let event;
+    let events;
 
     //Verify that the event posted came from Stripe
     try {
-      event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
+      events = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
     } catch (err) {
       console.log("ERROR", err.message);
-      return res.status(400).send(`Webhook error: ${err.message}`);
+      return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
     //Handle the checkout.session.completed event from Stripe
-    if (event.type === "checkout.session.completed") {
-      const session = event.data.object;
+    if (events.type === "checkout.session.completed") {
+      const session = events.data.object;
 
       //Fulfil the order, stores information in our Firebase Database and passed to the /success page so those who fulfils the order can see what they're fulfilling.
       return fulfilOrder(session)
