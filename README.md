@@ -13,7 +13,7 @@ An e-commerce website inspired by the designs of Amazon. You can sign in through
 - Express.js
 - Tailwind CSS
 - NextAuth.js
-- 
+- Firestore, Firebase
 
 # Instructions
 
