@@ -48,7 +48,7 @@ export default async (req, res) => {
     try {
       events = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
     } catch (err) {
-      console.log("ERROR", err.message);
+      console.log("ERROR !!", err.message);
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
