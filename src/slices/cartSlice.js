@@ -21,7 +21,6 @@ export const cartSlice = createSlice({
       //for every items in state, check cart item's id, if match (action.payloard) id passed through, remove
       //if found, it returns 0, if not found, returns -1.
       //if found, tells position of item in array
-      console.log("removeFromCart triggered");
       const index = state.items.findIndex(
         (cartItem) => cartItem.id === action.payload.id
       );

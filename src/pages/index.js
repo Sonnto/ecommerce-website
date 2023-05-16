@@ -25,9 +25,7 @@ export default function Home({ products }) {
 
 // FAKE STORE API to populate items being sold, using Next.js
 //GET request to https://fakestoreapi.com/products
-console.log("Is it reaching before the async function?");
 export async function getServerSideProps(context) {
-  console.log("Is it reaching here?");
   const products = await fetch("https://fakestoreapi.com/products").then(
     (res) => res.json()
   );

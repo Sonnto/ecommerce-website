@@ -15,7 +15,6 @@ import { selectItems } from "../slices/cartSlice";
 function Header() {
   //Ensures login or logged out session is everywhere
   const { data: session } = useSession() ?? {}; //Ensure no TypeError so if not falsy null/undefined, return truthy useSession() as session. Otherwise, return empty object; either way, will have data property to avoid Type Error.
-  console.log(session);
   //Routes pages
   const router = useRouter();
   //Shopping Cart items

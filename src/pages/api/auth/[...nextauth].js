@@ -5,7 +5,7 @@ import FacebookProvider from "next-auth/providers/facebook";
 import AppleProvider from "next-auth/providers/apple";
 
 // export default NextAuth({
-//   // Configure one or more authentication providers
+//   Configure one or more authentication providers
 //   providers: [
 //     GoogleProvider({
 //       clientId: process.env.GOOGLE_ID,
@@ -15,9 +15,9 @@ import AppleProvider from "next-auth/providers/apple";
 //       clientId: process.env.GITHUB_ID,
 //       clientSecret: process.env.GITHUB_SECRET,
 //     }),
-//     // ...add more providers here
+//     ...add more providers here
 //   ],
-//   // A database is optional but required to persist accounts in a datbaase
+//   A database is optional but required to persist accounts in a datbaase
 //   database: process.env.DATABASE_URL,
 // });
 
