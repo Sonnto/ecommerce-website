@@ -17,7 +17,7 @@ An e-commerce website inspired by the designs of Amazon. You can sign in through
 - Vercel
 
 ## APIs
-- Stripe API: https://stripe.com/docs/api
+- [Stripe](https://stripe.com/)
 - 
 
 # Instructions
