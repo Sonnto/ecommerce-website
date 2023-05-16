@@ -16,6 +16,10 @@ An e-commerce website inspired by the designs of Amazon. You can sign in through
 - Firestore, Firebase
 - Vercel
 
+## APIs
+- Stripe API: https://stripe.com/docs/api
+- 
+
 # Instructions
 
 ## Using npm
