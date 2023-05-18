@@ -16,7 +16,8 @@ An MVP e-commerce website inspired by the designs of Amazon. The user can see a 
 - Tailwind CSS
 - NextAuth.js
 - Firestore, Firebase
-- Vercel
+- Vercel (deployment)
+- HeroIcons (icons)
 
 ## APIs
 
