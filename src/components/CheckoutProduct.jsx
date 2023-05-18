@@ -49,7 +49,13 @@ function CheckoutProduct({
   return (
     <div className="grid grid-cols-5">
       {/* LEFT SINGLE COLUMN, IMAGES */}
-      <Image src={image} height={200} width={200} objectFit="contain" />
+      <Image
+        src={image}
+        alt={`preview of ${title}`}
+        height={200}
+        width={200}
+        objectFit="contain"
+      />
       {/* MIDDLE 3 COLUMN, TITLE, PRICE, DESCRIPTION */}
       <div className="col-span-3 mx-5">
         <p>{title}</p>
