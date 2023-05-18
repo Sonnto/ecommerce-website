@@ -37,7 +37,7 @@ function Header() {
         </div>
 
         {/* SEARCH BAR */}
-        <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer bg-yellow-400 hover:bg-yellow-500">
+        <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer bg-blue-300 hover:bg-blue-400">
           <input
             className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4"
             type="text"
@@ -67,7 +67,7 @@ function Header() {
             onClick={() => router.push("/checkout")}
             className="relative link flex items-center"
           >
-            <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
+            <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-blue-300 text-center rounded-full text-black font-bold">
               {items.length}
             </span>
 
