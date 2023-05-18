@@ -1,5 +1,4 @@
 import Header from "../components/Header";
-import { useRouter } from "next/router";
 import { useSession, getSession } from "next-auth/react";
 import moment from "moment";
 import db from "../../firebase";
@@ -7,13 +6,12 @@ import Order from "../components/Order";
 
 function Orders({ orders }) {
   const { data: session } = useSession() ?? {}; //Ensure no TypeError so if not falsy null/undefined, return truthy useSession() as session. Otherwise, return empty object; either way, will have data property to avoid Type Error.
-  const router = useRouter();
   console.log(orders);
   return (
     <div>
       <Header />
       <main className="max-w-sreen-lg mx-auto p-10">
-        <h1 className="text-3xl border-b mb-2 pb-1 border-yellow-400">
+        <h1 className="text-3xl border-b mb-2 pb-1 border-blue-400">
           Your Orders
         </h1>
 
