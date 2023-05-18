@@ -2,13 +2,6 @@ import moment from "moment";
 import ReactCurrencyFormatter from "react-currency-formatter";
 
 function Order({ id, amount, amountShipping, items, timestamp, images }) {
-  console.log(id);
-  console.log(amount);
-  console.log(amountShipping);
-  console.log(items);
-  console.log(timestamp);
-  console.log(images);
-
   return (
     <div className="relative border rounded-md">
       <div className="flex items-center space-x-10 p-5 bg-gray-100 text-sm text-gray-600">
