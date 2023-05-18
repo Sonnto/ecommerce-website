@@ -3,10 +3,12 @@ import { useRouter } from "next/router";
 import { useSession, getSession } from "next-auth/react";
 import moment from "moment";
 import db from "../../firebase";
+import Order from "../components/Order";
 
-function Orders(orders) {
+function Orders({ orders }) {
   const { data: session } = useSession() ?? {}; //Ensure no TypeError so if not falsy null/undefined, return truthy useSession() as session. Otherwise, return empty object; either way, will have data property to avoid Type Error.
   const router = useRouter();
+  console.log(orders);
   return (
     <div>
       <Header />
@@ -16,12 +18,26 @@ function Orders(orders) {
         </h1>
 
         {session ? (
-          <h2>x Orders</h2>
+          <h2>{orders.length} Orders</h2>
         ) : (
           <h2>Please sign in to see your orders</h2>
         )}
 
-        <div className="mt-5 space-y-4"></div>
+        <div className="mt-5 space-y-4">
+          {orders?.map(
+            ({ id, amount, amountShipping, items, timestamp, images }) => (
+              <Order
+                key={id}
+                id={id}
+                amount={amount}
+                amountShipping={amountShipping}
+                items={items}
+                timestamp={timestamp}
+                images={images}
+              />
+            )
+          )}
+        </div>
       </main>
     </div>
   );
@@ -41,6 +57,7 @@ export async function getServerSideProps(context) {
       props: {}, // if server is empty, aka not signed in, return empty properties as we don't want to continue
     };
   }
+
   // draws from the Firebase DB and get what the user ordered in descending order
   const stripeOrders = await db
     .collection("users")
@@ -56,7 +73,7 @@ export async function getServerSideProps(context) {
       amount: order.data().amount,
       amountShipping: order.data().amount_shipping,
       images: order.data().images,
-      timestamp: moment(order.data().timestamp.toDate()).unix(),
+      timestamp: moment(order.data().timestamp.toDate()).unix(), //translate to unix to retain date formatting
       items: (
         await stripe.checkout.sessions.listLineItems(order.id, {
           limit: 100,
@@ -68,6 +85,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       orders,
+      session,
     },
   };
 }
