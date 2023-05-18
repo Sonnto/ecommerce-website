@@ -51,4 +51,3 @@ Click to navigate the website. Add, remove, purchase items. Use `4242 4242 4242`
 
 - Add new functional sign-in options from Apple, GitHub, Facebook, etc.
 - Add a return section alongside the Orders section
-- 
