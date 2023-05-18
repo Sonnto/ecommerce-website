@@ -31,7 +31,25 @@ export default async (req, res) => {
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    shipping_options: ["shipping_rate"["shr_1N8DS0BgOzp49Zd0kzj6Qxyv"]], //shipping_rate `id`s from stripe's website dashboard for project ecommerce-website
+    shipping_options: [
+      {
+        shipping_rate_data: {
+          display_name: "Next Day Shipping (1-3 business days)",
+          type: "fixed_amount",
+          fixed_amount: {
+            amount: 899,
+            currency: "CAD",
+          },
+        },
+      },
+    ],
+    // shipping_options: ["shipping_rate"["shr_1N8DS0BgOzp49Zd0kzj6Qxyv"]"shipping_rate"["shr_1N8DnGBgOzp49Zd0QNUP8GtK"]"shipping_rate"["shr_1N8Dr8BgOzp49Zd0QFDfAkNG"]], //commenting out as they don't seem to work
+    // shipping_options: [
+    //   {
+    //     id: "shr_1N8DS0BgOzp49Zd0kzj6Qxyv",
+    //   },
+    // ], // doesn't work
+    //shipping_rate `id`s from stripe's website dashboard for project ecommerce-website
     shipping_address_collection: {
       allowed_countries: ["CA", "US", "GB", "HK"],
     },
