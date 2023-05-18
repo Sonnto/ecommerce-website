@@ -28,6 +28,7 @@ function Header() {
           <Image
             onClick={() => router.push("/")}
             src="/images/amazon_logo.png"
+            alt="website logo"
             width={150}
             height={40}
             className="cursor-pointer" //tailwind here
