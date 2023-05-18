@@ -45,7 +45,7 @@ Run commands
 
 ## What to do?
 
-Click to navigate the website. Add, remove, purchase items.
+Click to navigate the website. Add, remove, purchase items. Use credit card 4242 4242 4242 for test.
 
 # Future Developments
 
