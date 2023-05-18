@@ -1,4 +1,4 @@
-# Anthony's Online Garage Sale (E-Commerce Website)
+# Anthony's Online Store (E-Commerce Website)
 
 ## Details
 
