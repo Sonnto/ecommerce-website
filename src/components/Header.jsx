@@ -23,7 +23,7 @@ function Header() {
   return (
     <header>
       {/* TOP NAV */}
-      <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
+      <nav className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
         <div className="mx-6 flex items-center flex-grow sm:flex-grow-0">
           <Image
             onClick={() => router.push("/")}
@@ -77,10 +77,10 @@ function Header() {
             </p>
           </div>
         </div>
-      </div>
+      </nav>
 
       {/* BOTTOM NAV */}
-      <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
+      <nav className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
         <p className="link flex items-center font-extrabold md:text-sm">
           <Bars3Icon className="h-6 mr-1" />
           All
@@ -98,7 +98,7 @@ function Header() {
         <p className="link hidden lg:inline-flex">Fashion</p>
         <p className="link hidden lg:inline-flex">Health</p>
         <p className="link hidden lg:inline-flex">Automotive</p>
-      </div>
+      </nav>
     </header>
   );
 }
