@@ -1,6 +1,7 @@
 {
-  "name": "with-redux-toolkit",
+  "name": "ecommerce-website",
   "version": "1.0.0",
+  "description": "ecommerce website inspired by Amazon designs to sell products online",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -30,6 +31,7 @@
     "stripe": "^12.5.0",
     "upgrade": "^1.1.0"
   },
+  "author": "Kee-Fung Anthony Ho",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
