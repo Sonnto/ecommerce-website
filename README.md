@@ -53,3 +53,4 @@ Click to navigate the website. Sign in using socila media login providers (pleas
 - Add new functional sign-in options from Apple, GitHub, Facebook, etc.
 - Add a return section alongside the Orders section
 - Potentially add working links for other types of products listed on home page
+- Potentially add working search bar
