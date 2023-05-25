@@ -46,7 +46,7 @@ Run commands
 
 ## What to do?
 
-Click to navigate the website. Sign in using socila media login providers (please use Google for the time). View products for sale. Add to and remove from your shopping cart. Checkout. Process payment (use `4242 4242 4242` as the test credit card). View your order history.
+Click to navigate the website. Sign in using social media login providers (please use Google for the time). View products for sale. Add to and remove from your shopping cart. Checkout. Process payment (use `4242 4242 4242` as the test credit card). View your order history.
 
 # Future Developments
 
