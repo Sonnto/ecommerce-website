@@ -1,6 +1,5 @@
 import { buffer } from "micro";
 import * as admin from "firebase-admin";
-import rawBody from "raw-body";
 
 //Secures connection to Firebase from backend (api folder)
 const serviceAccount = require("../../../permissions.json");
@@ -39,7 +38,7 @@ const fulfilOrder = async (session) => {
 
 export default async (req, res) => {
   if (req.method === "POST") {
-    const requestBuffer = await rawBody(req);
+    const requestBuffer = await buffer(req);
     const payload = requestBuffer.toString();
     const sig = req.headers["stripe-signature"];
 
